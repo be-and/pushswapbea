@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
-#                                                      +:+                     #
-#    By: pride-ol <pride-ol@student.42.fr>            +#+                      #
-#                                                    +#+                       #
-#    Created: 2026/04/13 13:02:20 by pride-ol      #+#    #+#                  #
-#    Updated: 2026/04/13 15:00:31 by pride-ol      ########   odam.nl          #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/04/13 13:02:20 by pride-ol          #+#    #+#              #
+#    Updated: 2026/04/15 16:24:27 by bandrade         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -Ilibft
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRCS = push_swap.c push.c swap.c rotate.c rev_rotate.c
+SRCS = push_swap.c push.c swap.c rotate.c rev_rotate.c main.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_rotate.c                                       :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 13:51:54 by pride-ol          #+#    #+#             */
-/*   Updated: 2026/04/15 16:33:58 by bandrade         ###   ########.fr       */
+/*   Created: 2026/04/15 15:19:15 by bandrade          #+#    #+#             */
+/*   Updated: 2026/04/15 17:33:42 by bandrade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	rra(t_stack *a)
+int	valid_number(char *str)
 {
-	(void)a;
 }
 
-void	rrb(t_stack *b)
+long	safe_convert(char *str)
 {
-	(void)b;
 }
 
-void	rrr(t_stack *a, t_stack *b)
+int	check_duplicates(t_stack *a)
 {
-	(void)a;
-	(void)b;
+}
+
+void	error_exit(void)
+{
 }
