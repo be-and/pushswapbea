@@ -6,7 +6,7 @@
 #    By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/13 13:02:20 by pride-ol          #+#    #+#              #
-#    Updated: 2026/04/15 16:24:27 by bandrade         ###   ########.fr        #
+#    Updated: 2026/04/22 16:45:50 by bandrade         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,15 @@ CFLAGS = -Wall -Wextra -Werror -Ilibft
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRCS = push_swap.c push.c swap.c rotate.c rev_rotate.c main.c
+SRCS = main.c \
+	sort_handler.c \
+	sorting_helpers.c \
+	parsing.c \
+	parsing_helpers.c \
+	push.c \
+	swap.c \
+	rotate.c \
+	rev_rotate.c 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

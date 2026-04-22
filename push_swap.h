@@ -6,7 +6,7 @@
 /*   By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 13:54:18 by pride-ol          #+#    #+#             */
-/*   Updated: 2026/04/15 16:24:03 by bandrade         ###   ########.fr       */
+/*   Updated: 2026/04/22 18:04:10 by bandrade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,19 @@ typedef struct s_stack
 
 // main function
 void				sort_handler(t_stack *a, t_stack *b);
+
+// sorting helper function
+double				compute_disorder(t_stack *a);
+
+// parsing function
+int					fill_stack(t_stack *a, int argc, char **argv);
+
+// parsing helper functions
+int					valid_number(char *str);
+int					check_duplicates(t_stack *a, int n);
+long				ft_atol(char *str);
+void				error_exit(t_stack *a, t_stack *b);
+// void				free_stack(t_stack *s);
 
 // swap funtions
 void				sa(t_stack *a);
