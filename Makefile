@@ -6,23 +6,27 @@
 #    By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/13 13:02:20 by pride-ol          #+#    #+#              #
-#    Updated: 2026/04/22 16:45:50 by bandrade         ###   ########.fr        #
+#    Updated: 2026/04/28 14:10:11 by bandrade         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Ilibft
+CFLAGS = -Wall -Wextra -Werror -I. -Ilibft
 
 # libft variables
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS = main.c \
-	sort_handler.c \
+	sort/sort_handler.c \
+	sort/sort_3.c \
+	sort/sort_5.c \
+	sort/simple_sort.c \
 	sorting_helpers.c \
 	parsing.c \
 	parsing_helpers.c \
+	utils.c \
 	push.c \
 	swap.c \
 	rotate.c \

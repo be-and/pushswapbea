@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parsing_helpers.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 15:05:34 by pride-ol          #+#    #+#             */
-/*   Updated: 2026/04/22 18:04:20 by bandrade         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   parsing_helpers.c                                  :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: bandrade <bandrade@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/04/20 15:05:34 by pride-ol      #+#    #+#                 */
+/*   Updated: 2026/04/26 12:12:36 by pride-ol      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	valid_number(char *str)
 	return (1);
 }
 
-int	check_duplicates(t_stack *a, int n)
+int	check_duplicates(t_list *a, int n)
 {
 	t_node	*current;
 
@@ -69,33 +69,4 @@ long	ft_atol(char *str)
 		i++;
 	}
 	return (number * sign);
-}
-
-static void	free_stack(t_stack *s)
-{
-	t_node	*current;
-	t_node	*next;
-
-	if (!s || !s->top)
-		return ;
-	current = s->top;
-	while (current)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-	s->top = NULL;
-	s->bottom = NULL;
-	s->size = 0;
-}
-
-void	error_exit(t_stack *a, t_stack *b)
-{
-	if (a)
-		free_stack(a);
-	if (b)
-		free_stack(b);
-	write(2, "Error\n", 6);
-	exit(1);
 }
