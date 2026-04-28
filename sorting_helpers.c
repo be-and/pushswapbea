@@ -6,16 +6,16 @@
 /*   By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 12:33:34 by pride-ol          #+#    #+#             */
-/*   Updated: 2026/04/28 13:29:22 by bandrade         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:27:34 by bandrade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	*make_array(t_list *a);
+static int		*make_array(t_list *a);
 static t_node	*get_node_at_index(t_list *a, int index);
-static int	count_mistakes(int *array, int size);
-static int	count_pairs(int size);
+static int		count_mistakes(int *array, int size);
+static int		count_pairs(int size);
 
 double	compute_disorder(t_list *a)
 {

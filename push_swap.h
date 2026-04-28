@@ -6,7 +6,7 @@
 /*   By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 13:54:18 by pride-ol          #+#    #+#             */
-/*   Updated: 2026/04/28 14:04:53 by bandrade         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:26:57 by bandrade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ void				rrb(t_list *b);
 void				rrr(t_list *a, t_list *b);
 
 // algorithm functions
-void	sort_3(t_list *a);
-void	sort_5(t_list *a, t_list *b);
-void	simple_sort(t_list *a, t_list *b);
+void				sort_3(t_list *a);
+void				sort_5(t_list *a, t_list *b);
+void				simple_sort(t_list *a, t_list *b);
 
 #endif
