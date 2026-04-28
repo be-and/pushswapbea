@@ -6,7 +6,7 @@
 #    By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/13 13:02:20 by pride-ol          #+#    #+#              #
-#    Updated: 2026/04/28 14:10:11 by bandrade         ###   ########.fr        #
+#    Updated: 2026/04/28 17:52:30 by bandrade         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS = main.c \
 	sort/sort_handler.c \
-	sort/sort_3.c \
-	sort/sort_5.c \
+	sort/sort_3_5.c \
 	sort/simple_sort.c \
+	sort/simple_utils.c \
 	sorting_helpers.c \
 	parsing.c \
 	parsing_helpers.c \
