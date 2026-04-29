@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 13:54:18 by pride-ol          #+#    #+#             */
-/*   Updated: 2026/04/28 17:38:11 by bandrade         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   push_swap.h                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: bandrade <bandrade@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/04/13 13:54:18 by pride-ol      #+#    #+#                 */
+/*   Updated: 2026/04/29 19:02:22 by pride-ol      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 typedef struct s_node
 {
+	int				index;
 	int				value;
 	struct s_node	*next;
 	struct s_node	*prev;
@@ -49,6 +50,10 @@ long				ft_atol(char *str);
 void				init_list(t_list *list);
 void				free_list(t_list *s);
 void				error_exit(t_list *a, t_list *b);
+void				index_stack(t_list *a);
+t_node				*find_largest(t_list *a);
+int					is_sorted(t_list *a);
+void				rotate_to_node_b(t_list *b, t_node *target);
 
 // swap funtions
 void				sa(t_list *a);
@@ -77,5 +82,9 @@ t_node				*find_smallest(t_list *a);
 int					distance_top(t_list *a, t_node *target);
 int					distance_bottom(t_list *a, t_node *target);
 void				rotate_to_node(t_list *a, t_node *target);
+void				chunk_sort(t_list *a, t_list *b);
+void				index_list(t_list *a);
+int					find_bits(int max_value);
+void				radix_sort(t_list *a, t_list *b);
 
 #endif
