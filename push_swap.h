@@ -6,7 +6,7 @@
 /*   By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 13:54:18 by pride-ol          #+#    #+#             */
-/*   Updated: 2026/05/04 17:41:50 by bandrade         ###   ########.fr       */
+/*   Updated: 2026/05/04 19:07:59 by bandrade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ typedef struct s_data
 void				sort_handler(t_list *a, t_list *b, t_config *config);
 
 // flags fnctions
-void				parse_single_flag(char *str, t_config *config);
+int					parse_single_flag(char *str, t_config *config);
 void				print_benchmark_report(t_config *config);
+int					parse_flags(int argc, char **argv, t_config *config);
 
 // parsing function
-int					fill_list(t_list *a, int argc, char **argv,
-						t_config *config);
+int					fill_list(t_list *a, int argc, char **argv, int start);
 
 // parsing helper functions
 int					valid_number(char *str);

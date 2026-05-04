@@ -6,14 +6,14 @@
 /*   By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 12:58:30 by pride-ol          #+#    #+#             */
-/*   Updated: 2026/05/04 17:41:34 by bandrade         ###   ########.fr       */
+/*   Updated: 2026/05/04 18:42:22 by bandrade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	parse_single_flag(char *str, t_config *config)
+int	parse_single_flag(char *str, t_config *config)
 {
 	if (ft_strncmp(str, "--simple", 9) == 0)
 		config->strategy = 1;
@@ -25,6 +25,9 @@ void	parse_single_flag(char *str, t_config *config)
 		config->strategy = 0;
 	else if (ft_strncmp(str, "--bench", 8) == 0)
 		config->bench_mode = 1;
+	else
+		return (0);
+	return (1);
 }
 
 static int	get_total_ops(t_config *config)

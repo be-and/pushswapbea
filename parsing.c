@@ -6,7 +6,7 @@
 /*   By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 15:19:15 by bandrade          #+#    #+#             */
-/*   Updated: 2026/05/04 17:47:19 by bandrade         ###   ########.fr       */
+/*   Updated: 2026/05/04 18:59:33 by bandrade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,16 +85,14 @@ static int	process_arg(t_list *a, char *arg)
 	return (1);
 }
 
-int	fill_list(t_list *a, int argc, char **argv, t_config *config)
+int	fill_list(t_list *a, int argc, char **argv, int start)
 {
 	int	i;
 
-	i = 1;
+	i = start;
 	while (i < argc)
 	{
-		if (argv[i][0] == '-' && argv[i][1] == '-')
-			parse_single_flag(argv[i], config);
-		else if (!process_arg(a, argv[i]))
+		if (!process_arg(a, argv[i]))
 			return (0);
 		i++;
 	}
