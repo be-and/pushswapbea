@@ -1,60 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   parsing.c                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: bandrade <bandrade@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2026/04/15 15:19:15 by bandrade      #+#    #+#                 */
-/*   Updated: 2026/04/26 12:17:09 by pride-ol      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/15 15:19:15 by bandrade          #+#    #+#             */
+/*   Updated: 2026/05/04 17:47:19 by bandrade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	process_number(t_list *a, char *str);
-static void	add_to_list_bottom(t_list *stack, int val);
-static void	free_array(char **array);
-
-int	fill_list(t_list *a, int argc, char **argv)
-{
-	int		i;
-	int		j;
-	char	**temp_args;
-
-	i = 1;
-	while (i < argc)
-	{
-		temp_args = ft_split(argv[i], ' ');
-		if (!temp_args || !temp_args[0])
-			return (free_array(temp_args), 0);
-		j = 0;
-		while (temp_args[j])
-		{
-			if (!process_number(a, temp_args[j]))
-				return (free_array(temp_args), 0);
-			j++;
-		}
-		free_array(temp_args);
-		i++;
-	}
-	return (1);
-}
-
-static int	process_number(t_list *a, char *str)
-{
-	long	value;
-
-	if (!valid_number(str))
-		return (0);
-	value = ft_atol(str);
-	if (value > INT_MAX || value < INT_MIN)
-		return (0);
-	if (check_duplicates(a, (int)value))
-		return (0);
-	add_to_list_bottom(a, (int)value);
-	return (1);
-}
 
 static void	add_to_list_bottom(t_list *list, int val)
 {
@@ -80,7 +36,22 @@ static void	add_to_list_bottom(t_list *list, int val)
 	list->size++;
 }
 
-void	free_array(char **array)
+static int	process_number(t_list *a, char *str)
+{
+	long	value;
+
+	if (!valid_number(str))
+		return (0);
+	value = ft_atol(str);
+	if (value > INT_MAX || value < INT_MIN)
+		return (0);
+	if (check_duplicates(a, (int)value))
+		return (0);
+	add_to_list_bottom(a, (int)value);
+	return (1);
+}
+
+static void	free_array(char **array)
 {
 	int	i;
 
@@ -93,4 +64,39 @@ void	free_array(char **array)
 		i++;
 	}
 	free(array);
+}
+
+static int	process_arg(t_list *a, char *arg)
+{
+	char	**temp_args;
+	int		j;
+
+	temp_args = ft_split(arg, ' ');
+	if (!temp_args || !temp_args[0])
+		return (free_array(temp_args), 0);
+	j = 0;
+	while (temp_args[j])
+	{
+		if (!process_number(a, temp_args[j]))
+			return (free_array(temp_args), 0);
+		j++;
+	}
+	free_array(temp_args);
+	return (1);
+}
+
+int	fill_list(t_list *a, int argc, char **argv, t_config *config)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (argv[i][0] == '-' && argv[i][1] == '-')
+			parse_single_flag(argv[i], config);
+		else if (!process_arg(a, argv[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
