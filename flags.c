@@ -6,7 +6,7 @@
 /*   By: bandrade <bandrade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 12:58:30 by pride-ol          #+#    #+#             */
-/*   Updated: 2026/05/04 18:42:22 by bandrade         ###   ########.fr       */
+/*   Updated: 2026/05/06 18:21:58 by bandrade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,15 @@ static int	get_total_ops(t_config *config)
 static void	print_bench_header(t_config *config, int total_ops)
 {
 	ft_putstr_fd("[bench] dis: ", 2);
-	ft_putnbr_fd((int)(config->initial_disorder * 100), 2);
-	ft_putstr_fd("%\n", 2);
+	print_disorder(config->initial_disorder);
 	if (config->strategy == 1)
 		ft_putstr_fd("[bench] strategy: Simple Sort / O(n^2)\n", 2);
+	else if (config->strategy == 2)
+		ft_putstr_fd("[bench] strategy: Chunk Sort / O(n*sqrt(n))\n", 2);
 	else if (config->strategy == 3)
 		ft_putstr_fd("[bench] strategy: Radix Sort / O(n log n)\n", 2);
 	else
-		ft_putstr_fd("[bench] strategy: Adapt / O(n*sqrt(n))\n", 2);
+		ft_putstr_fd("[bench] strategy: Adaptive (Auto Select)\n", 2);
 	ft_putstr_fd("[bench] total_ops: ", 2);
 	ft_putnbr_fd(total_ops, 2);
 	ft_putstr_fd("\n", 2);
